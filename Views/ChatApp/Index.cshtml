@@ -1,0 +1,68 @@
+﻿
+    <div class="chatbody">
+        
+        <!--Navigation bar-->
+        <div class="chatnavbar">
+           
+        </div>
+
+        <!--Chat Application-->
+        <div class="chatmain">
+
+            <!--Side Menu-->
+            <vc:room></vc:room>
+            <!--End of Side Menu-->
+
+            
+            <div class="chat-app">
+                <!--Chat Messages-->
+                <div class="chat-messages">
+
+                    <div class="message">
+                        <header>Evans:</header>
+                        <p>This is a test message</p>
+                        <footer>19:00</footer>
+                    </div>
+                    <div class="message">
+                        <header>Allan:</header>
+                        <p>Hello World My friend!</p>
+                        <footer>19:02</footer>
+                    </div>
+                    <div class="message">
+                        <header>Ragnarok:</header>
+                        <p>
+                            Hello World My friend! World My friend!World My friend!World My friend!World My friend!World My friend!
+                            My friend!World My friend!World My friend!World My friend!World My friend!
+                        </p>
+                        <footer>19:02</footer>
+                    </div>
+
+                </div>
+                <!--End of Chat Messages-->
+
+                <!--Chat Input Section-->
+                <div class="chat-input">
+                    <input type="text" name="name" value="" />
+                    <button>Send</button>
+                </div>
+                <!--Chat Input Section End-->
+            </div>
+            
+        </div>
+        <!--End of Chat Application-->
+
+        <div class="modal" id="create-room-modal">
+            
+            <form asp-controller="ChatApp" asp-action="CreateRoom" class="modal-body">
+                <button type="button" class="close" onclick="closeModal()">X</button>
+                <header>Create Room</header>
+                <div>
+                    <input type="type" name="name" value="" />
+                </div>
+                <footer>
+                    <button>Create</button>
+                </footer>
+
+            </form>
+        </div>
+    </div>

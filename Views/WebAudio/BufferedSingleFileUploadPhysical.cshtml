@@ -1,0 +1,35 @@
+﻿<h1>File Upload</h1>
+
+<div>
+    <h4>Single File Upload</h4>
+    <form asp-controller="WebAudio" asp-action="UploadSingleFile" 
+          enctype="multipart/form-data"  method="post">
+
+        <input type="file" name="file"/>
+        <button type="submit">Submit</button>
+
+    </form>
+</div>
+
+<div>
+    <h4>Multiple File Uploads</h4>
+    <form asp-controller="WebAudio" asp-action="UploadMultipleFiles"
+          enctype="multipart/form-data" method="post">
+
+        <input type="file" multiple name="files" />
+        <button type="submit">Submit</button>
+
+    </form>
+</div>
+
+<div>
+    <h4>File in Model</h4>
+    <form asp-controller="WebAudio" asp-action="FileInModel"
+          enctype="multipart/form-data" method="post">
+
+        <input type="text" name="uploadfile.name" />
+        <input type="file" multiple name="uploadfile.File" />
+        <button type="submit">Submit</button>
+
+    </form>
+</div>

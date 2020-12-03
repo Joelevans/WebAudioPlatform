@@ -1,0 +1,41 @@
+﻿@model Chat
+    <div class="chatbody">
+        <!--Navigation bar-->
+        <div class="chatnavbar">
+
+        </div>
+
+        <!--Chat Application-->
+        <div class="chatmain">
+
+            <!--Side Menu-->
+            <vc:room></vc:room>
+            <!--End of Side Menu-->
+
+            <div class="chat-app">
+
+                <!--Chat Messages-->
+                <div class="chat-messages">
+                    @foreach (var message in Model.Messages)
+                    {
+                        <div class="message">
+                            <header>@message.Name:</header>
+                            <p>@message.Text</p>
+                            <footer>@message.Timestamp</footer>
+                        </div>
+                    }
+                </div>
+                <!--End of Chat Messages-->
+                <!--Chat Input Section-->
+                
+                    <form class="chat-input" asp-controller="ChatApp" asp-action="CreateMessage">
+                        <input type="hidden" name="chatId" value="@Model.Id" />
+                        <input type="text" name="message" value="" />
+                        <button type="submit">Send</button>
+                    </form>
+                
+                <!--Chat Input Section End-->
+
+            </div>
+        </div>
+    </div>
